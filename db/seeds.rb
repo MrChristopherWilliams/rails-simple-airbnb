@@ -5,3 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
+Flat.destroy_all
+4.times do
+  Flat.create!(
+    name: Faker::Ancient.god,
+    address: Faker::Address.city,
+    description: Faker::Cannabis.health_benefit,
+    price_per_night: rand(1000),
+    number_of_guests: rand(4)
+  )
+end

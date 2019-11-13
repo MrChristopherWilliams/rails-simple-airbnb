@@ -4,12 +4,26 @@
     <title>RailsSimpleAirbnb</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <!-- Add these line for detecting device width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <!-- [...] -->
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body data-gr-c-s-loaded="true" cz-shortcut-listen="true" class="bg-white">
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/flats">Simple AirBnb</a>
+        </div>
+        <div>
+          <a class="btn btn-outline-primary my-2 my-sm-0 ml-2" href="/flats/new">Add flat</a>
+        </div>
+      </div>
+    </nav>
+    <div>
     <%= yield %>
   </body>
 </html>
